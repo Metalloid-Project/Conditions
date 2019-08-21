@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.metalloid-project</groupId>
-    <artifactId>webdriver-utils</artifactId>
-    <version>1.0.0</version>
+    <artifactId>conditions</artifactId>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Metalloid WebDriver Utils</name>
-    <url>https://github.com/Metalloid-Project/Metalloid-WebDriver-Utils</url>
-    <description>Allows to insert WebDriver-based wrappers</description>
+    <url>https://github.com/Metalloid-Project/Conditions</url>
+    <description>ExpectedCondition annotation for WebElements and Controls</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -87,14 +87,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.metalloid-project</groupId>
-            <artifactId>page-factory</artifactId>
-            <version>1.0.0</version>
+            <artifactId>webdriver-utils</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 
@@ -126,8 +121,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/Metalloid-Project/Metalloid-WebDriver-Utils.git</connection>
-        <developerConnection>scm:git:ssh://github.com/Metalloid-Project/Metalloid-WebDriver-Utils.git</developerConnection>
-        <url>https://github.com/Metalloid-Project/Metalloid-WebDriver-Utils</url>
+        <connection>scm:git:git://github.com/Metalloid-Project/Conditions.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Metalloid-Project/Conditions.git</developerConnection>
+        <url>https://github.com/Metalloid-Project/Conditions</url>
     </scm>
 </project>
