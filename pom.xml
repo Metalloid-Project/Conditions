@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.metalloid-project</groupId>
-    <artifactId>conditions</artifactId>
-    <version>1.0.6</version>
+    <artifactId>metalloid-expected-conditions</artifactId>
+    <version>2.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Metalloid WebDriver Utils</name>
-    <url>https://github.com/Metalloid-Project/Conditions</url>
+    <name>Metalloid Expected Conditions</name>
+    <url>https://github.com/Rafal-Laskowski/Metalloid-Expected-Conditions</url>
     <description>ExpectedCondition annotation for WebElements and Controls</description>
 
     <properties>
@@ -88,8 +88,8 @@
     <dependencies>
         <dependency>
             <groupId>com.github.metalloid-project</groupId>
-            <artifactId>webdriver-utils</artifactId>
-            <version>1.0.5</version>
+            <artifactId>metalloid-utils</artifactId>
+            <version>2.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.metalloid-project</groupId>
@@ -119,15 +119,15 @@
     <developers>
         <developer>
             <name>Rafał Laskowski</name>
-            <email>metalloidproject@gmail.com</email>
+            <email>rafal.laskowski@outlook.com</email>
             <organization>TestOps - Rafał Laskowski</organization>
-            <organizationUrl>https://github.com/Metalloid-Project</organizationUrl>
+            <organizationUrl>https://github.com/Rafal-Laskowski</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/Metalloid-Project/Conditions.git</connection>
-        <developerConnection>scm:git:ssh://github.com/Metalloid-Project/Conditions.git</developerConnection>
-        <url>https://github.com/Metalloid-Project/Conditions</url>
+        <connection>scm:git:git://github.com/Rafal-Laskowski/Metalloid-Expected-Conditions.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Rafal-Laskowski/Metalloid-Expected-Conditions.git</developerConnection>
+        <url>https://github.com/Rafal-Laskowski/Metalloid-Expected-Conditions</url>
     </scm>
 </project>
