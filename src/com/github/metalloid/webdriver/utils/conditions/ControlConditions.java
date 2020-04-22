@@ -1,6 +1,9 @@
 package com.github.metalloid.webdriver.utils.conditions;
 
 import com.github.metalloid.pagefactory.controls.Control;
+import com.github.metalloid.webdriver.utils.JavaScript;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import java.util.List;
@@ -45,15 +48,24 @@ public class ControlConditions {
 
     public static <T extends Control> ExpectedCondition<T> controlToBeClickable(final T control) {
         return driver -> {
-            T element = presenceOfControl(control).apply(driver);
-            if (element != null && element.element().isEnabled()) {
-                return element;
+            T element = null;
+            try {
+                element = presenceOfControl(control).apply(driver);
+                if (element != null && element.element().isEnabled()) {
+                    return element;
+                }
+                return null;
+            } catch (ElementClickInterceptedException e) {
+                if (element != null) {
+                    JavaScript js = new JavaScript(driver);
+                    js.scrollToElement(element);
+                    return null;
+                } else throw e;
             }
-            return null;
         };
     }
 
-    public static <T extends Control> ExpectedCondition<List<T>> visbilityOfAllControls(final List<T> controls) {
+    public static <T extends Control> ExpectedCondition<List<T>> visibilityOfAllControls(final List<T> controls) {
         return driver -> {
             for (T control : controls) {
                 if (!control.isDisplayed()) {
@@ -92,6 +104,17 @@ public class ControlConditions {
                 return pattern.matcher(currentValue).find();
             } catch (Exception e) {
                 return false;
+            }
+        };
+    }
+
+    public static <T extends Control> ExpectedCondition<Boolean> stalenessOf(final T control) {
+        return driver -> {
+            try {
+                control.isDisplayed();
+                return false;
+            } catch (StaleElementReferenceException e) {
+                return true;
             }
         };
     }

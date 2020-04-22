@@ -30,6 +30,7 @@ public class ConditionEvaluator {
 				Object variable;
 
 				try {
+					field.setAccessible(true);
 					variable = field.get(page);
 				} catch (IllegalAccessException e) {
 					throw new RuntimeException(String.format("Cannot get instance of field: %s IllegalAccessException: %s", field.getName(), e.getMessage()));
@@ -80,7 +81,7 @@ public class ConditionEvaluator {
 	}
 
 	private static boolean isWebElement(Object variable) {
-		return Control.class.isAssignableFrom(variable.getClass());
+		return WebElement.class.isAssignableFrom(variable.getClass());
 	}
 
 	private static boolean isControl(Class<?> clazz) {
